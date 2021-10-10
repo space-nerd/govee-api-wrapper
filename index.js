@@ -148,10 +148,22 @@ class goveeApiWrapper {
     return this.request(endpoint, reqData, "put");
   }
 
-  getState() {
+  async getState() {
     var reqData = {};
     var endpoint = `/state?device=${this.mac}&model=${this.model}`;
-    return this.request(endpoint, reqData, "get");
+    var response = await this.request(endpoint, reqData, "get");
+    var properties = await response.data.properties;
+    return properties;
+  }
+
+  async getColorColorTemp() {
+    var reqData = {};
+    var endpoint = `/state?device=${this.mac}&model=${this.model}`;
+    var response = await this.request(endpoint, reqData, "get");
+    var color = await response.data.properties[3]?.color;
+    var colorTemp = await response.data.properties[4]?.colorTem;
+    if (color) return color;
+    if (colorTemp) return colorTemp;
   }
 
   async getDevices() {
