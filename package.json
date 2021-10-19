@@ -7,11 +7,11 @@
     "type": "git",
     "url": "git+https://github.com/space-nerd/govee-api-wrapper.git"
   },
-  "keywords": [
-    "govee",
-    "light",
-    "led"
-  ],
+
+  "scripts": {
+    "test": "node tests/index.js"
+  },
+  "keywords": ["govee", "light", "led"],
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/space-nerd/govee-api-wrapper#readme",
   "dependencies": {
-    "axios": "^0.22.0"
+    "axios": "^0.22.0",
+    "express": "4.17.1"
   }
 }
