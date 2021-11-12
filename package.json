@@ -1,17 +1,20 @@
 {
   "name": "govee-api-wrapper",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/space-nerd/govee-api-wrapper.git"
   },
-
   "scripts": {
-    "test": "node tests/index.js"
+    "test": "jest"
   },
-  "keywords": ["govee", "light", "led"],
+  "keywords": [
+    "govee",
+    "light",
+    "led"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -19,7 +22,9 @@
   },
   "homepage": "https://github.com/space-nerd/govee-api-wrapper#readme",
   "dependencies": {
-    "axios": "^0.22.0",
-    "express": "4.17.1"
+    "axios": "^0.22.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
   }
 }

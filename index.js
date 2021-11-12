@@ -22,9 +22,9 @@ class goveeApiWrapper {
         url: reqURL,
         headers: {
           "Govee-API-Key": this.apiKey,
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        data: data
+        data: data,
       };
 
       axios(config)
@@ -52,7 +52,7 @@ class goveeApiWrapper {
         ? {
             r: parseInt(result[1], 16),
             g: parseInt(result[2], 16),
-            b: parseInt(result[3], 16)
+            b: parseInt(result[3], 16),
           }
         : null;
     }
@@ -66,9 +66,9 @@ class goveeApiWrapper {
         value: {
           r: RGBconv.r,
           g: RGBconv.g,
-          b: RGBconv.b
-        }
-      }
+          b: RGBconv.b,
+        },
+      },
     };
     var endpoint = "/control";
     return this.request(endpoint, reqData, "put");
@@ -85,8 +85,8 @@ class goveeApiWrapper {
         model: this.model,
         cmd: {
           name: "turn",
-          value: "off"
-        }
+          value: "off",
+        },
       };
     } else {
       var reqData = {
@@ -94,8 +94,8 @@ class goveeApiWrapper {
         model: this.model,
         cmd: {
           name: "brightness",
-          value: brightnessLevel
-        }
+          value: brightnessLevel,
+        },
       };
     }
 
@@ -115,8 +115,8 @@ class goveeApiWrapper {
       model: this.model,
       cmd: {
         name: "colorTem",
-        value: temperatureLevel
-      }
+        value: temperatureLevel,
+      },
     };
     var endpoint = "/control";
     return this.request(endpoint, reqData, "put");
@@ -128,8 +128,8 @@ class goveeApiWrapper {
       model: this.model,
       cmd: {
         name: "turn",
-        value: "on"
-      }
+        value: "on",
+      },
     };
     var endpoint = "/control";
     return this.request(endpoint, reqData, "put");
@@ -141,8 +141,8 @@ class goveeApiWrapper {
       model: this.model,
       cmd: {
         name: "turn",
-        value: "off"
-      }
+        value: "off",
+      },
     };
     var endpoint = "/control";
     return this.request(endpoint, reqData, "put");
@@ -178,9 +178,9 @@ class goveeApiWrapper {
       url: reqURL,
       headers: {
         "Govee-API-Key": this.apiKey,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      data: data
+      data: data,
     };
 
     let resData;
